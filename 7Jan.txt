@@ -1,0 +1,33 @@
+const cart = [
+  { name: "Laptop", price: 1000 },
+  { name: "Mouse", price: 20 },
+  { name: "Keyboard", price: 50 }
+];
+
+const disCart = cart.map((item) => {
+    const discounted = item.price * 0.9 ;
+    return discounted;
+});
+
+console.log(disCart)
+
+
+
+const items = [
+    { name: "Apple", category: "Fruit" },
+    { name: "Onion", category: "Vegetable" },
+    { name: "Orange", category: "Fruit" },
+    { name: "Lettuce", category: "Vegetable" }
+];
+
+const newItems = items.reduce((acc,curr) => {
+    const key = curr.category;
+    
+    if(!acc[key]){
+        acc[key] = [];
+    }
+    acc[key].push(curr.name)
+    return acc;
+},{});
+
+console.log(newItems)
