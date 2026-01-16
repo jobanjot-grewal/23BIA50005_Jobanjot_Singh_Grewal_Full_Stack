@@ -1,3 +1,13 @@
+#Experiment 1: Modern React Foundations – EcoTrack
+##Aim
+To design and implement the foundational frontend architecture of the EcoTrack application using modern React practices, Vite tooling, and ES6+ JavaScript features.
+______________
+##Objectives
+•	To set up a React project using Vite with proper project structure
+•	To understand component-based architecture in React
+•	To apply ES6 array methods (map, filter, reduce) for data-driven UI rendering
+•	To separate concerns using components, pages, and data modules
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
