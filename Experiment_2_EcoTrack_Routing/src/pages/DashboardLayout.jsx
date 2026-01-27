@@ -1,0 +1,19 @@
+import {Link } from "react-router-dom"
+
+
+const DashboardLayout = ()=>{
+    return (
+        <>
+        <h3>Dashboard</h3>
+        <nav>
+            <Link to="/summary">Summary</Link>
+            <Link to="/analytics">Analytics</Link>
+        </nav>
+
+        <hr />
+        </>
+    
+    )
+}
+
+export default DashboardLayout;
