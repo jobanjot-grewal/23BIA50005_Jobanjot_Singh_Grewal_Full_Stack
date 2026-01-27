@@ -6,19 +6,29 @@ import DashboardSummary from "./pages/DashboardSummary";
 import ProtectedRoute from "./routes/ProtectedRoute.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
+import Logout from "./pages/Logout";
 import Header from "./components/Header";
 
 function App() {
   return (
     <BrowserRouter>
-
-    <Header title="EcoTrack" />
+      <Header title="EcoTrack" />
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>} />
-        <Route path="/summary" element={<ProtectedRoute><DashboardSummary /></ProtectedRoute>} />
-        <Route path="/analytics" element={<ProtectedRoute><DashboardAnalytics /></ProtectedRoute>} />
-        <Route path="/logs" element={<ProtectedRoute><Logs logs={logs} /></ProtectedRoute>} />
+        <Route path="/logout" element={<Logout />} />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <DashboardLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<DashboardSummary />} />
+          <Route path="summary" element={<DashboardSummary />} />
+          <Route path="analytics" element={<DashboardAnalytics />} />
+          <Route path="logs" element={<Logs logs={logs} />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
